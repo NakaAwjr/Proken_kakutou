@@ -65,3 +65,6 @@ sysinfo.txt
 *.unitypackage
 # Crashlytics generated file
 crashlytics-build.properties
+
+# ダウンロードアセットを無視
+/[Aa]ssets/[Dd]own[Ll]oad[Aa]ssets/
