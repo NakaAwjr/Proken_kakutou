@@ -11,11 +11,15 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
     private bool isGround;
+    Vector3 bulletPoint;
+    public GameObject BulletObj;
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        bulletPoint = transform.Find("BulletPoint").localPosition;
+
     }
 
     // Update is called once per frame
@@ -23,13 +27,14 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Jump();
+        Attack();
     }
 
     private void Move()
     {
         float x = Input.GetAxis("Horizontal") > 0 ? 1 : Input.GetAxis("Horizontal") < 0 ? -1 : 0;
         transform.position += new Vector3(x * speed * Time.deltaTime, 0, 0);
-        if(isGround && x != 0)
+        if (isGround && x != 0)
         {
             transform.localScale = new Vector3(x, 1, 1);
         }
@@ -45,6 +50,18 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("isJump", !isGround);
     }
 
+    private void Attack()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(BulletObj, transform.position + bulletPoint, Quaternion.identity);
+            _animator.SetTrigger("isAttack");
+        }
+
+    }
+
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -52,4 +69,5 @@ public class PlayerController : MonoBehaviour
             isGround = true;
         }
     }
+
 }
