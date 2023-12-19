@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class PlayerController : MonoBehaviour
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        float x = Input.GetAxis("Horizontal") > 0 ? 1 : Input.GetAxis("Horizontal") < 0 ? -1 : 0;
+        float x = Gamepad.current.leftStick.ReadValue().x > 0 ? 1 : Gamepad.current.leftStick.ReadValue().x < 0 ? -1 : 0;
         transform.position += new Vector3(x * speed * Time.deltaTime, 0, 0);
         if (isGround && x != 0)
         {
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Jump()
     {
-        if (Input.GetButtonDown("Jump") && isGround)
+        if (Gamepad.current.buttonNorth.isPressed && isGround)
         {
             _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             isGround = false;
@@ -52,10 +52,10 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Gamepad.current.buttonWest.wasPressedThisFrame)
         {
             Instantiate(BulletObj, transform.position + bulletPoint, Quaternion.identity);
-            _animator.SetTrigger("isAttack");
+            _animator.SetTrigger("attack");
         }
 
     }
