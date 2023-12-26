@@ -1649,8 +1649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78457060e1831394ba0ece554961844f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpPower: 5
+  speed: 7
+  jumpPower: 7
   BulletObj: {fileID: 835815655}
 --- !u!1001 &9210600516996313168
 PrefabInstance:
