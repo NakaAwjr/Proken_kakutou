@@ -6,16 +6,16 @@ public class PlayerBullet : MonoBehaviour
 {
     public float MoveSpeed = 20.0f;         // 移動値
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private float moveDirection = 1.0f;    // 弾の移動方向（1: 正の方向, -1: 負の方向）
 
+    public void SetDirection(float direction)
+    {
+        moveDirection = direction;
     }
 
-    // Update is called once per frame
     void Update()
     {
         // 位置の更新
-        transform.Translate(MoveSpeed * Time.deltaTime, 0, 0);
+        transform.Translate(MoveSpeed * moveDirection * Time.deltaTime, 0, 0);
     }
 }
