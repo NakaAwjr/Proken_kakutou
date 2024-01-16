@@ -54,11 +54,20 @@ public class PlayerController : MonoBehaviour
     {
         if (Gamepad.current.buttonWest.wasPressedThisFrame)
         {
-            Instantiate(BulletObj, transform.position + bulletPoint, Quaternion.identity);
+            float Direction = transform.localScale.x;
+
+            GameObject bullet = Instantiate(BulletObj, transform.position + new Vector3(bulletPoint.x * Direction, bulletPoint.y, bulletPoint.z), Quaternion.identity);
+
+            bullet.GetComponent<Bullet>().SetDirection(Direction);
+
+            Destroy(bullet, 1.0f);
             _animator.SetTrigger("attack");
         }
 
     }
+
+
+
 
 
 
@@ -67,6 +76,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
+        }
+        if (collision.gameObject.tag == "Bullet")
+        {
+            _animator.SetTrigger("hurt");
+            Destroy(collision.gameObject);
         }
     }
 
