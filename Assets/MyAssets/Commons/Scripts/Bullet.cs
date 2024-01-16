@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float MoveSpeed = 20.0f;         // 移動値
 
@@ -17,5 +17,15 @@ public class PlayerBullet : MonoBehaviour
     {
         // 位置の更新
         transform.Translate(MoveSpeed * moveDirection * Time.deltaTime, 0, 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var target = collision.gameObject.GetComponent<Status>();
+        if (target != null)
+        {
+            target.Damage(1);
+        }
+
     }
 }

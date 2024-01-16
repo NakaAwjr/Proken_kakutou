@@ -58,13 +58,15 @@ public class PlayerController : MonoBehaviour
 
             GameObject bullet = Instantiate(BulletObj, transform.position + new Vector3(bulletPoint.x * Direction, bulletPoint.y, bulletPoint.z), Quaternion.identity);
 
-            bullet.GetComponent<PlayerBullet>().SetDirection(Direction);
+            bullet.GetComponent<Bullet>().SetDirection(Direction);
 
             Destroy(bullet, 1.0f);
             _animator.SetTrigger("attack");
         }
 
     }
+
+
 
 
 
