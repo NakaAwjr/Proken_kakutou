@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Jump()
     {
-        if (Gamepad.current.buttonNorth.isPressed && isGround)
+        if (Gamepad.current.buttonNorth.wasPressedThisFrame && isGround)
         {
             _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             isGround = false;
