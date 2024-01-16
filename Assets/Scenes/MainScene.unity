@@ -1697,12 +1697,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78457060e1831394ba0ece554961844f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-viour:
-  speed: 7
-  jumpPower: 7
-  BulletObj: {fileID: 835815655}
---- !u!1001 &9210600516996313168
-PrefabInstance:
+  speed: 5
+  jumpPower: 5
+  BulletObj: {fileID: 4353296968931076244, guid: 7024e361e8ac8ca46833f15990bc4f1a, type: 3}
+--- !u!114 &1944232797
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
