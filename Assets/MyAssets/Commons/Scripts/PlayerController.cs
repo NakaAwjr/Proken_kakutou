@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator), typeof(CommonAttack))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpPower = 5f;
-    private Animator _animator;
+    public Animator _animator;
+    private CommonAttack _attack;
     private Rigidbody2D _rigidbody2D;
     private bool isGround;
-    Vector3 bulletPoint;
-    public GameObject BulletObj;
+    
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        bulletPoint = transform.Find("BulletPoint").localPosition;
-
+        _attack = GetComponent<CommonAttack>();
     }
 
     // Update is called once per frame
@@ -54,14 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Gamepad.current.buttonWest.wasPressedThisFrame)
         {
-            float Direction = transform.localScale.x;
-
-            GameObject bullet = Instantiate(BulletObj, transform.position + new Vector3(bulletPoint.x * Direction, bulletPoint.y, bulletPoint.z), Quaternion.identity);
-
-            bullet.GetComponent<Bullet>().SetDirection(Direction);
-
-            Destroy(bullet, 1.0f);
-            _animator.SetTrigger("attack");
+            _attack.Attack1();
         }
 
     }

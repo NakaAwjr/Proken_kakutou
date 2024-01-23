@@ -1454,6 +1454,10 @@ PrefabInstance:
       value: 1.398857
       objectReference: {fileID: 0}
     - target: {fileID: 4311632104328546863, guid: 1ddfadca1a5c9dd4394458c0319e49ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311632104328546863, guid: 1ddfadca1a5c9dd4394458c0319e49ed, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -1483,6 +1487,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4105362945620786469, guid: 1ddfadca1a5c9dd4394458c0319e49ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1944232797}
+    - targetCorrespondingSourceObject: {fileID: 4105362945620786469, guid: 1ddfadca1a5c9dd4394458c0319e49ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1944232801}
     - targetCorrespondingSourceObject: {fileID: 3581684743427378859, guid: 1ddfadca1a5c9dd4394458c0319e49ed, type: 3}
       insertIndex: 2
       addedObject: {fileID: 154918016}
@@ -1699,7 +1706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpPower: 5
-  BulletObj: {fileID: 4353296968931076244, guid: 7024e361e8ac8ca46833f15990bc4f1a, type: 3}
+  _animator: {fileID: 0}
 --- !u!114 &1944232797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,6 +1721,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp: 100
   hp: 10
+--- !u!114 &1944232801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944232788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f55477f88d72544836e57112ee8c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletObj: {fileID: 4353296968931076244, guid: 7024e361e8ac8ca46833f15990bc4f1a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
