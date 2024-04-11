@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
         var target = collision.gameObject.GetComponent<Status>();
         if (target != null)
         {
-            target.Damage(1);
+            target.Damage(10);
         }
 
     }
