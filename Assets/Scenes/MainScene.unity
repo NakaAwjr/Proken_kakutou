@@ -1787,7 +1787,7 @@ PrefabInstance:
       addedObject: {fileID: 1944232797}
     - targetCorrespondingSourceObject: {fileID: 4105362945620786469, guid: 1ddfadca1a5c9dd4394458c0319e49ed, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1944232801}
+      addedObject: {fileID: 1944232798}
     - targetCorrespondingSourceObject: {fileID: 3581684743427378859, guid: 1ddfadca1a5c9dd4394458c0319e49ed, type: 3}
       insertIndex: 2
       addedObject: {fileID: 154918016}
@@ -2123,6 +2123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp: 100
   hp: 100
+--- !u!114 &1944232798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2135,13 +2136,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletObj: {fileID: 4353296968931076244, guid: 7024e361e8ac8ca46833f15990bc4f1a, type: 3}
+--- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 95360644}
   - {fileID: 656900456}
   - {fileID: 676523789}
   - {fileID: 1317300527}
-  - {fileID: 1521672697}
-  - {fileID: 95360644}
   - {fileID: 1016482013}
+  - {fileID: 1521672697}
   - {fileID: 193343398}
